@@ -63,7 +63,7 @@ resource "null_resource" "logdna_bind" {
       SYNC = var.sync
       REGION = self.triggers.region
       RESOURCE_GROUP = self.triggers.resource_group
-      IBMCLOUD_API_KEY = self.triggers.ibmcloud_api_key
+      IBMCLOUD_API_KEY = nonsensitive(self.triggers.ibmcloud_api_key)
     }
   }
 
@@ -75,7 +75,7 @@ resource "null_resource" "logdna_bind" {
       BIN_DIR = self.triggers.bin_dir
       REGION = self.triggers.region
       RESOURCE_GROUP = self.triggers.resource_group
-      IBMCLOUD_API_KEY = self.triggers.ibmcloud_api_key
+      IBMCLOUD_API_KEY = nonsensitive(self.triggers.ibmcloud_api_key)
     }
   }
 }
